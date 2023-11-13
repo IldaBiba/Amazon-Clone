@@ -1,8 +1,8 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import "./App.css";
 import DisplayPage from "./Pages/DisplayPage";
-import Header from "./Components/Header";
-import Banner from "./Components/Banner";
+import Header from "./Pages/Header";
+import Banner from "./Pages/Banner";
 import MainBody from "./Pages/MainBody";
 import UserLog from "./Pages/UserLog";
 import Cart from "./Pages/Cart";

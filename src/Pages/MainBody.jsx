@@ -1,8 +1,8 @@
 import React from "react";
-import Makecard from "../Components/MakeCard";
+import Makecard from "./MakeCard";
 import Store from "../Util/fakeStore";
-import Row from "../Components/Row";
-import BigCard from "../Components/BigCard";
+import Row from "./Row";
+import BigCard from "./BigCard";
 function MainBody() {
   return (
     <div className="main flex">
