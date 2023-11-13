@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { StateProvider } from "./StateProvider";
-import reducer, { initialState } from "./reducer";
+import reducer, { initialState } from "./Redux/reducer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

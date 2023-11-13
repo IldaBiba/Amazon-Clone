@@ -1,4 +1,4 @@
-import { auth } from "../firebase";
+import { auth } from "../Util/firebase";
 import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";

@@ -1,11 +1,11 @@
-import { Route, BrowserRouter, Routes, Router } from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import "./App.css";
-import DisplayPage from "./Components/DisplayPage";
+import DisplayPage from "./Pages/DisplayPage";
 import Header from "./Components/Header";
 import Banner from "./Components/Banner";
-import MainBody from "./Components/MainBody";
-import UserLog from "./Components/UserLog";
-import Cart from "./Components/Cart";
+import MainBody from "./Pages/MainBody";
+import UserLog from "./Pages/UserLog";
+import Cart from "./Pages/Cart";
 import { useStateValue } from "./StateProvider";
 import ProtectedRoutes from "./ProtectedRoutes";
 

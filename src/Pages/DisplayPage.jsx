@@ -3,7 +3,6 @@ import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useStateValue } from "../StateProvider";
-import Header from "./Header";
 
 function DisplayPage() {
   const [{ basket }, dispatch] = useStateValue();
