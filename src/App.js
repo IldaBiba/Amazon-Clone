@@ -1,8 +1,8 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import "./App.css";
 import DisplayPage from "./Pages/DisplayPage";
-import Header from "./Pages/Header";
-import Banner from "./Pages/Banner";
+import Header from "./Components/Header";
+import Banner from "./Components/Banner";
 import MainBody from "./Pages/MainBody";
 import UserLog from "./Pages/UserLog";
 import Cart from "./Pages/Cart";
@@ -21,19 +21,13 @@ function App() {
         <Routes>
           <Route
             path="/DisplayPage/:category/:id"
-            element={
-              <>
-                <Header />
-                <DisplayPage />
-              </>
-            }
+            element={<DisplayPage />}
           ></Route>
           <Route path="/Sign-In" element={<UserLog />} />
           <Route
             path="/"
             element={
               <>
-                <Header />
                 <Banner />
                 <MainBody />
               </>
@@ -44,7 +38,6 @@ function App() {
             path="/cart"
             element={
               <>
-                <Header />
                 <ProtectedRoutes token={token}>
                   <Cart />
                 </ProtectedRoutes>
