@@ -1,7 +1,6 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import "./App.css";
 import DisplayPage from "./Pages/DisplayPage";
-import Header from "./Layout/Header";
 import MainBody from "./Pages/MainBody";
 import UserLog from "./Pages/UserLog";
 import Cart from "./Pages/Cart";

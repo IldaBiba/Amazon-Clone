@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import { Search } from "@mui/icons-material";
 import { useStateValue } from "../StateProvider";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 
-function Header({ children }) {
+function Header() {
   const [{ basket, isUser }, dispatch] = useStateValue();
   const navigate = useNavigate();
   console.log(isUser);
@@ -69,7 +68,6 @@ function Header({ children }) {
           </div>
         )}
       </nav>
-      {children}
     </>
   );
 }

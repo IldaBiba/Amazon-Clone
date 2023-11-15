@@ -36,10 +36,8 @@ function UserLog() {
 
     if (email == "" || password == "" || password.length < 8) {
       navigate("/Sign-In");
-      console.log("para se te futet");
     } else {
       if (signUp) {
-        console.log("u fut");
         auth
           .createUserWithEmailAndPassword(email, password)
           .then(
@@ -66,9 +64,6 @@ function UserLog() {
           .then(navigate(`/`));
       }
     }
-    updateemail("");
-    updatePassword("");
-    updateUsername("");
   }
   return (
     <>
