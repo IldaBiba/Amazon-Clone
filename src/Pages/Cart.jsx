@@ -3,8 +3,10 @@ import { useState } from "react";
 import { useStateValue } from "../StateProvider";
 import { useEffect } from "react";
 import { Button } from "react-bootstrap";
+import { Navigate } from "react-router-dom";
+import Layout from "../Layout/Layout";
 
-function Cart() {
+function Cart({ token }) {
   const [totalPrice, setTotalPrice] = useState(0);
   const [{ basket }, dispatch] = useStateValue();
   var price = 0;
@@ -48,28 +50,34 @@ function Cart() {
     );
   }
 
-  return (
-    <div>
-      <div className="Cart">
-        <div className="price-card flex ">
-          <img src="./shop.png" alt="" className="img" />
-          <div>
-            <h4>Shop All Items in Your Cart</h4>
-            <div>Total Price={totalPrice}</div>
-            <Button className="btn">Buy Now</Button>
+  if (!token) {
+    return <Navigate to="/Sign-In" replace />;
+  } else {
+    return (
+      <Layout>
+        <div>
+          <div className="Cart">
+            <div className="price-card flex ">
+              <img src="./shop.png" alt="" className="img" />
+              <div>
+                <h4>Shop All Items in Your Cart</h4>
+                <div>Total Price={totalPrice}</div>
+                <Button className="btn">Buy Now</Button>
+              </div>
+            </div>
+            {basket.length === 0 ? (
+              <div>
+                <h2>Your basket is empty</h2>
+                <h6>Start Adding Items to your basket</h6>
+              </div>
+            ) : (
+              basket.map(displayCartItem)
+            )}
           </div>
         </div>
-        {basket.length === 0 ? (
-          <div>
-            <h2>Your basket is empty</h2>
-            <h6>Start Adding Items to your basket</h6>
-          </div>
-        ) : (
-          basket.map(displayCartItem)
-        )}
-      </div>
-    </div>
-  );
+      </Layout>
+    );
+  }
 }
 
 export default Cart;

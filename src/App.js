@@ -6,7 +6,6 @@ import MainBody from "./Pages/MainBody";
 import UserLog from "./Pages/UserLog";
 import Cart from "./Pages/Cart";
 import { useStateValue } from "./StateProvider";
-import ProtectedRoutes from "./ProtectedRoutes";
 
 function App() {
   const [{ isUser }] = useStateValue();
@@ -16,7 +15,6 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Header />
         <Routes>
           <Route
             path="/DisplayPage/:category/:id"
@@ -24,14 +22,7 @@ function App() {
           ></Route>
           <Route path="/Sign-In" element={<UserLog />} />
           <Route path="/" element={<MainBody />}></Route>
-          <Route
-            path="/cart"
-            element={
-              <ProtectedRoutes token={token}>
-                <Cart />
-              </ProtectedRoutes>
-            }
-          ></Route>
+          <Route path="/cart" element={<Cart token={token} />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
