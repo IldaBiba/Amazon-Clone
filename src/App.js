@@ -1,8 +1,7 @@
-import { Route, BrowserRouter, Routes, useLocation } from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import "./App.css";
 import DisplayPage from "./Pages/DisplayPage";
-import Layout from "./Components/Layout";
-import Banner from "./Components/Banner";
+import Header from "./Layout/Header";
 import MainBody from "./Pages/MainBody";
 import UserLog from "./Pages/UserLog";
 import Cart from "./Pages/Cart";
@@ -17,31 +16,20 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Layout />
+        <Header />
         <Routes>
           <Route
             path="/DisplayPage/:category/:id"
             element={<DisplayPage />}
           ></Route>
           <Route path="/Sign-In" element={<UserLog />} />
-          <Route
-            path="/"
-            element={
-              <>
-                <Banner />
-                <MainBody />
-              </>
-            }
-          ></Route>
-
+          <Route path="/" element={<MainBody />}></Route>
           <Route
             path="/cart"
             element={
-              <>
-                <ProtectedRoutes token={token}>
-                  <Cart />
-                </ProtectedRoutes>
-              </>
+              <ProtectedRoutes token={token}>
+                <Cart />
+              </ProtectedRoutes>
             }
           ></Route>
         </Routes>

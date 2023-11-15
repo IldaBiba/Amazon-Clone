@@ -3,10 +3,11 @@ import Makecard from "../Components/MakeCard";
 import Store from "../Util/fakeStore";
 import Row from "../Components/Row";
 import BigCard from "../Components/BigCard";
-import Layout from "../Components/Layout";
+import Banner from "../Components/Banner";
 function MainBody() {
   return (
-    <>
+    <div>
+      <Banner />
       <div className="main flex">
         <Makecard fetchUrl={Store.mensclothing} />
         <Makecard fetchUrl={Store.jewelery} />
@@ -29,7 +30,7 @@ function MainBody() {
         <Row fetchUrl={Store.womensclothing} heading="Fashion"></Row>
         <BigCard image="./banner2.jpg" />
       </div>
-    </>
+    </div>
   );
 }
 

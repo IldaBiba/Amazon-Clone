@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useStateValue } from "../StateProvider";
 import { useEffect } from "react";
 import { Button } from "react-bootstrap";
-import Layout from "../Components/Layout";
 
 function Cart() {
   const [totalPrice, setTotalPrice] = useState(0);
