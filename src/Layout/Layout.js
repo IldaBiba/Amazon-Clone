@@ -1,9 +1,9 @@
-import Header from "./Header";
+import Header from "../Components/Header";
 
-function Layout({ children, isHeader }) {
+function Layout({ children, hasHeader = true }) {
   return (
     <>
-      {isHeader && <Header />}
+      {hasHeader && <Header />}
       {children}
     </>
   );

@@ -7,7 +7,7 @@ import Banner from "../Components/Banner";
 import Layout from "../Layout/Layout";
 function MainBody() {
   return (
-    <Layout isHeader={true}>
+    <Layout>
       <div>
         <Banner />
         <div className="main flex">

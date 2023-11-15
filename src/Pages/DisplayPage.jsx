@@ -35,7 +35,7 @@ function DisplayPage() {
   }
 
   return (
-    <Layout isHeader={true}>
+    <Layout>
       <div className="DisplayPage">
         <div className="back_to_amazon">
           <Link to="/">Go Back</Link>

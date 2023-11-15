@@ -68,7 +68,7 @@ function UserLog() {
     }
   }
   return (
-    <Layout isHeader={false}>
+    <Layout hasHeader={false}>
       <div className="Log flex">
         <Link to="/">
           <div className="">
