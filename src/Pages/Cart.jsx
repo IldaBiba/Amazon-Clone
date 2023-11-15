@@ -18,63 +18,57 @@ function Cart() {
 
   function displayCartItem(item, index) {
     return (
-      <>
-        <Layout>
-          <div key={item.id}>
-            <div className="cart-card flex">
-              <div className="img">
-                <img src={item.image} alt="" />
-              </div>
-              <div className="detail flex">
-                <div className="title">{item.title}</div>
-                <div>${item.price}</div>
-                <div>
-                  <Button
-                    className="btn"
-                    onClick={() => {
-                      return dispatch({
-                        type: "Remove_From_Cart",
-                        item: {
-                          id: item.id,
-                          index: index,
-                        },
-                      });
-                    }}
-                  >
-                    Remove from Cart
-                  </Button>
-                  <Button className="btn">Buy Now!</Button>
-                </div>
-              </div>
+      <div key={item.id}>
+        <div className="cart-card flex">
+          <div className="img">
+            <img src={item.image} alt="" />
+          </div>
+          <div className="detail flex">
+            <div className="title">{item.title}</div>
+            <div>${item.price}</div>
+            <div>
+              <Button
+                className="btn"
+                onClick={() => {
+                  return dispatch({
+                    type: "Remove_From_Cart",
+                    item: {
+                      id: item.id,
+                      index: index,
+                    },
+                  });
+                }}
+              >
+                Remove from Cart
+              </Button>
+              <Button className="btn">Buy Now!</Button>
             </div>
           </div>
-        </Layout>
-      </>
+        </div>
+      </div>
     );
   }
 
   return (
     <div>
-      <Layout>
-        <div className="Cart">
-          <div className="price-card flex ">
-            <img src="./shop.png" alt="" className="img" />
-            <div>
-              <h4>Shop All Items in Your Cart</h4>
-              <div>Total Price={totalPrice}</div>
-              <Button className="btn">Buy Now</Button>
-            </div>
+      <div className="Cart">
+        <div className="price-card flex ">
+          <img src="./shop.png" alt="" className="img" />
+          <div>
+            <h4>Shop All Items in Your Cart</h4>
+            <div>Total Price={totalPrice}</div>
+            <Button className="btn">Buy Now</Button>
           </div>
-          {basket.length === 0 ? (
-            <div>
-              <h2>Your basket is empty</h2>
-              <h6>Start Adding Items to your basket</h6>
-            </div>
-          ) : (
-            basket.map(displayCartItem)
-          )}
         </div>
-      </Layout>
+        {basket.length === 0 ? (
+          <div>
+            <h2>Your basket is empty</h2>
+            <h6>Start Adding Items to your basket</h6>
+          </div>
+        ) : (
+          basket.map(displayCartItem)
+        )}
+      </div>
     </div>
   );
 }

@@ -7,7 +7,6 @@ import Layout from "../Components/Layout";
 function MainBody() {
   return (
     <>
-      <Layout />
       <div className="main flex">
         <Makecard fetchUrl={Store.mensclothing} />
         <Makecard fetchUrl={Store.jewelery} />

@@ -4,7 +4,7 @@ import { Search } from "@mui/icons-material";
 import { useStateValue } from "../StateProvider";
 import { useNavigate } from "react-router-dom";
 
-function Header() {
+function Header({ layout }) {
   const [{ basket, isUser }, dispatch] = useStateValue();
   const navigate = useNavigate();
   console.log(isUser);

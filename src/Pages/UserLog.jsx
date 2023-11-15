@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useStateValue } from "../StateProvider";
 import { useNavigate } from "react-router-dom";
-import Layout from "../Components/Layout";
 
 function UserLog() {
   const navigate = useNavigate();
@@ -14,6 +13,7 @@ function UserLog() {
   const [password, updatePassword] = useState("");
   const [signUp, setSignUp] = useState(false);
   const [username, updateUsername] = useState("");
+
   function ChangeForm() {
     if (signUp) setSignUp(false);
     else setSignUp(true);
@@ -72,68 +72,62 @@ function UserLog() {
   }
   return (
     <>
-      <Layout>
-        <div className="Log flex">
-          <Link to="/">
-            <div className="">
-              <img src="./amazon-logo.png" alt="" />
-            </div>
-          </Link>
-          <form className="flex">
-            <h3>{!signUp ? "Sign In" : "Sign Up"}</h3>
-            {signUp && (
-              <div className="flex username">
-                <label htmlFor="username">Username</label>
-                <input
-                  type="text"
-                  name="username"
-                  id="username"
-                  value={username}
-                  onChange={handleUsername}
-                />
-              </div>
-            )}
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value={email}
-              onChange={handleEmail}
-            />
-            <label htmlFor="Password">Password</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              value={password}
-              onChange={handlePassword}
-            />
-            <Button
-              type="submit"
-              className="btn btn-margin"
-              onClick={handleSubmit}
-            >
-              {!signUp ? "Sign In" : "Sign Up"}
-            </Button>
-          </form>
-          <hr />
-          <div>
-            {
-              <div>
-                <div>New To Amazon</div>
-                <button className="btn" onClick={ChangeForm}>
-                  {!signUp ? (
-                    <div>Create a new Account</div>
-                  ) : (
-                    <div>Sign In</div>
-                  )}
-                </button>
-              </div>
-            }
+      <div className="Log flex">
+        <Link to="/">
+          <div className="">
+            <img src="./amazon-logo.png" alt="" />
           </div>
+        </Link>
+        <form className="flex">
+          <h3>{!signUp ? "Sign In" : "Sign Up"}</h3>
+          {signUp && (
+            <div className="flex username">
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                value={username}
+                onChange={handleUsername}
+              />
+            </div>
+          )}
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={email}
+            onChange={handleEmail}
+          />
+          <label htmlFor="Password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value={password}
+            onChange={handlePassword}
+          />
+          <Button
+            type="submit"
+            className="btn btn-margin"
+            onClick={handleSubmit}
+          >
+            {!signUp ? "Sign In" : "Sign Up"}
+          </Button>
+        </form>
+        <hr />
+        <div>
+          {
+            <div>
+              <div>New To Amazon</div>
+              <button className="btn" onClick={ChangeForm}>
+                {!signUp ? <div>Create a new Account</div> : <div>Sign In</div>}
+              </button>
+            </div>
+          }
         </div>
-      </Layout>
+      </div>
     </>
   );
 }

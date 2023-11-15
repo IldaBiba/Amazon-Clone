@@ -1,7 +1,7 @@
-import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Route, BrowserRouter, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import DisplayPage from "./Pages/DisplayPage";
-import Header from "./Components/Header";
+import Layout from "./Components/Layout";
 import Banner from "./Components/Banner";
 import MainBody from "./Pages/MainBody";
 import UserLog from "./Pages/UserLog";
@@ -13,11 +13,11 @@ function App() {
   const [{ isUser }] = useStateValue();
   console.log(isUser, "isUser");
   const token = isUser;
-  console.log(token, "token");
 
   return (
     <div>
       <BrowserRouter>
+        <Layout />
         <Routes>
           <Route
             path="/DisplayPage/:category/:id"
