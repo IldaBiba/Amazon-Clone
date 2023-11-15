@@ -1,9 +1,9 @@
 import Header from "./Header";
 
-function Layout({ children }) {
+function Layout({ children, isHeader }) {
   return (
     <>
-      <Header />
+      {isHeader && <Header />}
       {children}
     </>
   );

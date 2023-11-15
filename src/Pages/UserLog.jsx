@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useStateValue } from "../StateProvider";
 import { useNavigate } from "react-router-dom";
+import Layout from "../Layout/Layout";
 
 function UserLog() {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ function UserLog() {
   const [password, updatePassword] = useState("");
   const [signUp, setSignUp] = useState(false);
   const [username, updateUsername] = useState("");
+  const [header, setHeader] = useState("");
 
   function ChangeForm() {
     if (signUp) setSignUp(false);
@@ -66,7 +68,7 @@ function UserLog() {
     }
   }
   return (
-    <>
+    <Layout isHeader={false}>
       <div className="Log flex">
         <Link to="/">
           <div className="">
@@ -123,7 +125,7 @@ function UserLog() {
           }
         </div>
       </div>
-    </>
+    </Layout>
   );
 }
 

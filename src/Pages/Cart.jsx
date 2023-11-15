@@ -54,7 +54,7 @@ function Cart({ token }) {
     return <Navigate to="/Sign-In" replace />;
   } else {
     return (
-      <Layout>
+      <Layout isHeader={true}>
         <div>
           <div className="Cart">
             <div className="price-card flex ">
